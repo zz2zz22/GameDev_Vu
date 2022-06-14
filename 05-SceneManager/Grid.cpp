@@ -6,6 +6,7 @@ void Grid::_ParseGridCells(std::string line) {
 	if (tokens.size() < 2) {
 		return;
 	}
+
 	_xCells = std::stoul(tokens.at(0));
 	_yCells = std::stoul(tokens.at(1));
 
