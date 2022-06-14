@@ -42,7 +42,7 @@ struct CollisionEvent {
 class GameObject {
 public:
 	enum class GameObjectType {
-		//Players
+		//Mario
 		GAMEOBJECT_TYPE_MARIO = 0
 	};
 
