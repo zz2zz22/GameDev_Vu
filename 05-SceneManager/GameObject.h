@@ -1,71 +1,116 @@
 #pragma once
 
-#include <Windows.h>
-#include <d3dx10.h>
-#include <vector>
+#define NOMINMAX
 
-#include "Animation.h"
-#include "Animations.h"
-#include "Sprites.h"
-#include "Collision.h"
+#include "BoundBox.h"
+#include <fstream>
+#include <algorithm>
 
-using namespace std;
+#include <d3dx9.h>
 
-#define ID_TEX_BBOX -100		// special texture to draw object bounding box
-#define BBOX_ALPHA 0.25f		// Bounding box transparency
+class GameObject;
+class Entity;
 
-class CGameObject
-{
+struct CollisionEvent;
+typedef CollisionEvent* LPCOLLISIONEVENT;
+struct CollisionEvent {
+	GameObject* gameOject;
+	Entity* entity;
+	D3DXVECTOR2 normal;
+	D3DXVECTOR2 distance;
+	float time;
+
+	CollisionEvent(GameObject*& obj, D3DXVECTOR2 norm, D3DXVECTOR2 dist, float t) {
+		gameOject = obj;
+		normal = norm;
+		distance = dist;
+		time = t;
+	}
+
+	CollisionEvent(Entity*& ent, D3DXVECTOR2 norm, D3DXVECTOR2 dist, float t) {
+		entity = ent;
+		normal = norm;
+		distance = dist;
+		time = t;
+	}
+
+	static bool CompareCollisionEvent(const LPCOLLISIONEVENT& a, const LPCOLLISIONEVENT& b) {
+		return a->time < b->time;
+	}
+};
+
+class GameObject {
+public:
+	enum class GameObjectType {
+		//Players
+		GAMEOBJECT_TYPE_MARIO = 0
+	};
+
 protected:
+	bool _isActive;
 
-	float x; 
-	float y;
+	GameObjectType _objectType;
 
-	float vx;
-	float vy;
+	BoundBox _hitbox;
 
-	int nx;	 
+	DWORD _deltaTime;
 
-	int state;
+	D3DXVECTOR2 _velocity;
+	D3DXVECTOR2 _distance;
+	D3DXVECTOR2 _normal;
 
-	bool isDeleted; 
+	D3DXVECTOR2 _position;
+	D3DXVECTOR2 _rotation;
+	D3DXVECTOR2 _translation;
+	D3DXVECTOR2 _scale;
 
-public: 
-	void SetPosition(float x, float y) { this->x = x, this->y = y; }
-	void SetSpeed(float vx, float vy) { this->vx = vx, this->vy = vy; }
-	void GetPosition(float &x, float &y) { x = this->x; y = this->y; }
-	void GetSpeed(float &vx, float &vy) { vx = this->vx; vy = this->vy; }
+public:
+	//If true, the entity is removed from the container
+	//But its resources will not be released
+	//Useful for when an object needs to know when another object is ready to be removed
+	bool flaggedForRemoval;
+	//Pass throughable entities are entities that
+	//Other entities can pass through without blocking their velocity
+	bool isPassThroughable;
 
-	int GetState() { return this->state; }
-	virtual void Delete() { isDeleted = true;  }
-	bool IsDeleted() { return isDeleted; }
+	GameObject();
+	virtual ~GameObject();
 
-	void RenderBoundingBox();
+	//Is this Java?
+	void SetActive(bool);
+	bool IsActive() const;
 
-	CGameObject();
-	CGameObject(float x, float y) :CGameObject() { this->x = x; this->y = y; }
+	bool IsOverlapped(GameObject*) const;
 
+	void SetOjectType(GameObjectType);
+	GameObjectType GetObjectType() const;
 
-	virtual void GetBoundingBox(float &left, float &top, float &right, float &bottom) = 0;
-	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects = NULL) {};
-	virtual void Render() = 0;
-	virtual void SetState(int state) { this->state = state; }
+	virtual RECTF GetBoundingBox(int = 0) const;
+	float GetBoxWidth(int = 0) const;
+	float GetBoxHeight(int = 0) const;
 
-	//
-	// Collision ON or OFF ? This can change depending on object's state. For example: die
-	//
-	virtual int IsCollidable() { return 0; };
+	virtual void SetVelocity(D3DXVECTOR2);
+	D3DXVECTOR2 GetVelocity() const;
+	virtual void SetDistance(D3DXVECTOR2);
+	D3DXVECTOR2 GetDistance() const;
+	virtual void SetNormal(D3DXVECTOR2);
+	D3DXVECTOR2 GetNormal() const;
+	virtual void SetPosition(D3DXVECTOR2);
+	D3DXVECTOR2 GetPosition() const;
+	virtual void SetRotation(D3DXVECTOR2);
+	D3DXVECTOR2 GetRotation() const;
+	virtual void SetTranslation(D3DXVECTOR2);
+	D3DXVECTOR2 GetTranslation() const;
+	virtual void SetScale(D3DXVECTOR2);
+	D3DXVECTOR2 GetScale() const;
 
-	// When no collision has been detected (triggered by CCollision::Process)
-	virtual void OnNoCollision(DWORD dt) {};
+	//Moving object, static object, distance of moving object, normal, time
+	void SweptAABB(RECTF, RECTF, D3DXVECTOR2, D3DXVECTOR2&, float&);
+	//Filter the collision between objects based on the shortest time
+	void FilterCollision(const std::vector<LPCOLLISIONEVENT>&, std::vector<LPCOLLISIONEVENT>&, D3DXVECTOR2&, D3DXVECTOR2&, D3DXVECTOR2&);
 
-	// When collision with an object has been detected (triggered by CCollision::Process)
-	virtual void OnCollisionWith(LPCOLLISIONEVENT e) {};
-	
-	// Is this object blocking other object? If YES, collision framework will automatically push the other object
-	virtual int IsBlocking() { return 1; }
+	virtual void Update(DWORD, std::vector<GameObject*>* = nullptr);
+	virtual void Render();
 
-	~CGameObject();
-
-	static bool IsDeleted(const LPGAMEOBJECT &o) { return o->isDeleted; }
+	virtual void Release() = 0;
 };
