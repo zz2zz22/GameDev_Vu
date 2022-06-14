@@ -1,0 +1,16 @@
+idle_00	217	89	229	104
+idle_01	177	89	189	104
+walk right_00	217	89	229	104
+walk right_01	256	89	271	105
+run right_00	215	169	231	185
+run right_01	255	169	271	185
+run left_00	175	169	191	185
+run left_01	135	169	151	185
+brace right_00	216	129	230	145
+brace left_00	176	129	190	145
+jump walk right_00	335	89	351	105
+jump walk left_00	55	89	71	105
+jump run right_00	215	209	231	225
+jump run left_00	175	209	191	225
+walk left_00	177	89	189	104
+walk left_01	135	89	150	105
