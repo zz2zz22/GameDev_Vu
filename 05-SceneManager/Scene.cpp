@@ -285,7 +285,7 @@ void Scene::LoadScene() {
 
 
 	_cameraInstance = Camera::GetInstance();
-	//
+	
 
 	_SceneFileSection sceneFileSection = _SceneFileSection::SCENEFILE_SECTION_UNKNOWN;
 
@@ -389,23 +389,9 @@ void Scene::LoadScene() {
 		case _SceneFileSection::SCENEFILE_SECTION_TEXTURES:
 			_ParseTextures(line);
 			break;
-		case _SceneFileSection::SCENEFILE_SECTION_ENTITYDATA:
-			_ParseEntityData(line);
-			break;
-		case _SceneFileSection::SCENEFILE_SECTION_TILEDATA:
-			_ParseTileData(line);
-			break;
+		
 		case _SceneFileSection::SCENEFILE_SECTION_GRID:
 			_ParseGrid(line);
-			break;
-		case _SceneFileSection::SCENEFILE_SECTION_HUD:
-			_ParseHUD(line);
-			break;
-		case _SceneFileSection::SCENEFILE_SECTION_MAINEFFECT:
-			_ParseMainEffect(line);
-			break;
-		case _SceneFileSection::SCENEFILE_SECTION_BACKGROUND:
-			_ParseBackground(line);
 			break;
 		}
 	}

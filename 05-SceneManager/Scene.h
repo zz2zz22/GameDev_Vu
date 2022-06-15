@@ -82,13 +82,8 @@ protected:
 	void _ParseCameraBounds(std::string);
 	void _ParseBackgroundColor(std::string);
 	void _ParseTextures(std::string);
-	void _ParseEntityData(std::string);
-	void _ParseTileData(std::string);
 	void _ParseGrid(std::string);
-	void _ParseHUD(std::string);
-	void _ParseMainEffect(std::string);
-	void _ParseBackground(std::string);
-
+	
 public:
 	Scene(SceneType, std::string);
 	virtual ~Scene();
