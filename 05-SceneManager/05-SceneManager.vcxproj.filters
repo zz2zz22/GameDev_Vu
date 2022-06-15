@@ -13,10 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\LogicalAndUtils">
+    <Filter Include="Header Files\Framework">
       <UniqueIdentifier>{674a42fc-e295-4821-86d7-bbcf9bc7062d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\LogicalAndUtils">
+    <Filter Include="Source Files\Framework">
       <UniqueIdentifier>{009630e2-720a-4134-aa98-4dd1a0576921}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -25,18 +25,96 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameUtils.cpp">
-      <Filter>Source Files\LogicalAndUtils</Filter>
+      <Filter>Source Files\Framework</Filter>
     </ClCompile>
     <ClCompile Include="BoundBox.cpp">
-      <Filter>Source Files\LogicalAndUtils</Filter>
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Pipeline.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedSprite.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files\Framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameUtils.h">
-      <Filter>Header Files\LogicalAndUtils</Filter>
+      <Filter>Header Files\Framework</Filter>
     </ClInclude>
     <ClInclude Include="BoundBox.h">
-      <Filter>Header Files\LogicalAndUtils</Filter>
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Pipeline.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedSprite.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityList.h">
+      <Filter>Header Files\Framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
