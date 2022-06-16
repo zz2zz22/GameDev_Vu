@@ -1,0 +1,47 @@
+#ID for the theme
+[MAINTHEMES]
+2	3
+[/]
+
+[SCENESIZE]
+2816	656
+[/]
+
+#In seconds
+[SCENETIME]
+300
+[/]
+
+#Float (Specify the value to lock the camera in place when posy > sceneHeight * value)
+[CAMERALOCKVALUE]
+0.3
+[/]
+
+#Left	top	right	bottom	up_vector
+[CAMERABOUNDS]
+0	-8	2808	465	1
+1968	456	2479	689	1
+[/]
+
+[BGCOLOR]
+156	252	240
+[/]
+
+[TEXTURES]
+0	Resources\textures\tileset.png
+1	Resources\textures\map.png
+2	Resources\textures\player.png
+3	Resources\textures\hud.png
+4	Resources\textures\enemies.png
+5	Resources\textures\items.png
+6	Resources\textures\particles.png
+7	Resources\textures\projectiles.png
+8	Resources\textures\masks.png
+[/]
+
+#OBJ_ID	FILE_PATH			texID	X	Y	EXTRA_DATA
+[ENTITYDATA]
+#Player											OBJ_ID	FILE_PATH				texID
+0	Resources\textures\data\mario.txt	2	25	384	107	Resources\textures\data\fireball.txt	7
+
+[/]
