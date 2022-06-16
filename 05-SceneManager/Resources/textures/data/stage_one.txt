@@ -71,4 +71,20 @@
 205	Resources\textures\data\coin.txt	5	1760	128
 205	Resources\textures\data\coin.txt	5	1808	96
 205	Resources\textures\data\coin.txt	5	1840	128
+#Underground
+205	Resources\textures\data\coin.txt	5	2192	488
+205	Resources\textures\data\coin.txt	5	2208	488
+205	Resources\textures\data\coin.txt	5	2176	504
+205	Resources\textures\data\coin.txt	5	2224	504
+205	Resources\textures\data\coin.txt	5	2224	520
+205	Resources\textures\data\coin.txt	5	2192	536
+205	Resources\textures\data\coin.txt	5	2208	536
+205	Resources\textures\data\coin.txt	5	2224	552
+205	Resources\textures\data\coin.txt	5	2176	568
+205	Resources\textures\data\coin.txt	5	2224	568
+205	Resources\textures\data\coin.txt	5	2192	584
+205	Resources\textures\data\coin.txt	5	2208	584
+
+#Bonus item
+206	Resources\textures\data\bonusitem.txt	5	2683	331
 [/]
