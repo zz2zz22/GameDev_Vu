@@ -3,6 +3,7 @@
 2	3
 [/]
 
+#Same as map size
 [SCENESIZE]
 2816	656
 [/]
@@ -23,6 +24,7 @@
 1968	456	2479	689	1
 [/]
 
+#plain color for map 1_1
 [BGCOLOR]
 156	252	240
 [/]
@@ -44,4 +46,29 @@
 #Player											OBJ_ID	FILE_PATH				texID
 0	Resources\textures\data\mario.txt	2	25	384	107	Resources\textures\data\fireball.txt	7
 
+#Item
+#Coin
+205	Resources\textures\data\coin.txt	5	1072	320
+205	Resources\textures\data\coin.txt	5	1104	288
+205	Resources\textures\data\coin.txt	5	1136	256
+205	Resources\textures\data\coin.txt	5	1168	224
+205	Resources\textures\data\coin.txt	5	1200	192
+205	Resources\textures\data\coin.txt	5	1328	80
+205	Resources\textures\data\coin.txt	5	1344	80
+205	Resources\textures\data\coin.txt	5	1360	80
+205	Resources\textures\data\coin.txt	5	1472	112
+205	Resources\textures\data\coin.txt	5	1488	112
+205	Resources\textures\data\coin.txt	5	1536	128
+205	Resources\textures\data\coin.txt	5	1552	128
+205	Resources\textures\data\coin.txt	5	1568	128
+205	Resources\textures\data\coin.txt	5	1584	128
+205	Resources\textures\data\coin.txt	5	1616	112
+205	Resources\textures\data\coin.txt	5	1632	112
+205	Resources\textures\data\coin.txt	5	1648	112
+205	Resources\textures\data\coin.txt	5	1664	112
+205	Resources\textures\data\coin.txt	5	1696	144
+205	Resources\textures\data\coin.txt	5	1728	112
+205	Resources\textures\data\coin.txt	5	1760	128
+205	Resources\textures\data\coin.txt	5	1808	96
+205	Resources\textures\data\coin.txt	5	1840	128
 [/]

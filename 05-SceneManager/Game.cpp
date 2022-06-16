@@ -13,7 +13,6 @@ unsigned int Game::windowAdjustY = 0;
 LRESULT Game::_WinProc(HWND hWND, UINT message, WPARAM wParam, LPARAM lParam) {
 	switch (message) {
 		//https://stackoverflow.com/questions/28968012/win32-add-black-borders-to-fullscreen-window
-		//You have no idea how long it took just to find this
 	case WM_SIZE:
 	{
 		const SIZE ar = { GameUtils::SCREEN_WIDTH, GameUtils::SCREEN_HEIGHT };
@@ -243,11 +242,6 @@ void Game::_Render() {
 
 	device->ClearRenderTargetView(renderTargetView, currentScene->GetBGColor());
 	spriteHandler->Begin(D3DX10_SPRITE_SORT_TEXTURE | D3DX10_SPRITE_SAVE_STATE);
-
-	/*char debug[100];
-	sprintf_s(debug, "D3DX_SDK_VERSION: %d", D3DX10_SDK_VERSION);
-	RECT rect{};
-	GlobalUtil::WriteTextToScreen(debug, &rect, DT_LEFT, D3DXCOLOR(1.0f, 0.0f, 0.0f, 1.0f));*/
 
 	//RGBA
 	float newBlendFactor[4] = { 0.0f };
