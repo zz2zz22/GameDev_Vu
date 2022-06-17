@@ -147,7 +147,6 @@ void Fireball::HandleCollisionResult(
 			break;
 			//Ignore these entities
 		case GameObjectType::GAMEOBJECT_TYPE_MARIO:
-		case GameObjectType::GAMEOBJECT_TYPE_LUIGI:
 		case GameObjectType::GAMEOBJECT_TYPE_REDMUSHROOM:
 		case GameObjectType::GAMEOBJECT_TYPE_GREENMUSHROOM:
 		case GameObjectType::GAMEOBJECT_TYPE_FLOWER:
