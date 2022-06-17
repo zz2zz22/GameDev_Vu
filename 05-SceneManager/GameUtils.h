@@ -17,8 +17,8 @@
 #include <dinput.h>
 
 namespace GameUtils {
-	const unsigned int SCREEN_WIDTH = 320;
-	const unsigned int SCREEN_HEIGHT = 240; //Init screen size (change)
+	const unsigned int SCREEN_WIDTH = 256;
+	const unsigned int SCREEN_HEIGHT = 224; //Init screen size (change)
 	//Used in all entity classes
 	const unsigned int MAX_FILE_LINE = 5000;
 

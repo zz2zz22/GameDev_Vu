@@ -30,6 +30,7 @@ int __stdcall WinMain(
 	unsigned int xPos = (GetSystemMetrics(SM_CXSCREEN) - windowRect.right) / 3;
 	unsigned int yPos = (GetSystemMetrics(SM_CYSCREEN) - windowRect.bottom) / 4;
 
+	gameInstance->LoadSettings("Resources/textures/data/settings.txt");
 	SetWindowPos(hWND, nullptr, xPos, yPos, GameUtils::SCREEN_WIDTH * 3, GameUtils::SCREEN_HEIGHT * 3, SWP_NOOWNERZORDER | SWP_NOZORDER);
 	gameInstance->GameRun();
 
