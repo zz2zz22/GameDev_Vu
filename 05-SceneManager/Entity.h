@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "AnimatedSprite.h"
 
 class Grid;
 struct Cell;
@@ -30,6 +31,8 @@ protected:
 	int _renderPriority;
 
 	std::string _variant;
+
+	AnimatedSprite _animatedSprite;
 
 	DWORD _removeStart;
 	//Default is 2s
