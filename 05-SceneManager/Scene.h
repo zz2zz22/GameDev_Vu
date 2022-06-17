@@ -2,7 +2,14 @@
 
 #include "Grid.h"
 #include "Camera.h"
+#include "Background.h"
 #include "Entity.h"
+#include "Tile.h"
+
+#include "Player.h"
+#include "HUD.h"
+
+#include "ScorePopUp.h"
 
 #include <vector>
 #include <string>
@@ -61,6 +68,15 @@ protected:
 	DWORD _toSceneTime;
 
 	Camera* _cameraInstance;
+	Background* _background;
+	HUD* _hud;
+	ScorePopUp* _scorePopUp;
+
+	//Do the Mario, swing your arms from side to side, cmon let's go and do the Mario now
+	Player* _player;
+
+	PropPlayer* _propMario;
+	PropPlayer* _propLuigi;
 
 	SelectText* _selectText;
 
@@ -82,8 +98,13 @@ protected:
 	void _ParseCameraBounds(std::string);
 	void _ParseBackgroundColor(std::string);
 	void _ParseTextures(std::string);
+	void _ParseEntityData(std::string);
+	void _ParseTileData(std::string);
 	void _ParseGrid(std::string);
-	
+	void _ParseHUD(std::string);
+	void _ParseMainEffect(std::string);
+	void _ParseBackground(std::string);
+
 public:
 	Scene(SceneType, std::string);
 	virtual ~Scene();

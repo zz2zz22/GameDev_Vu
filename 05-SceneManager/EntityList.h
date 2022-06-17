@@ -25,6 +25,7 @@
 #include "Koopa.h"
 #include "Parakoopa.h"
 #include "PiranaPlant.h"
+#include "VenusPlant.h"
 //Other
 #include "Tail.h"
 

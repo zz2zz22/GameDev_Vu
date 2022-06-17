@@ -44,6 +44,7 @@ public:
 	enum class GameObjectType {
 		//Mario
 		GAMEOBJECT_TYPE_MARIO = 0,
+		GAMEOBJECT_TYPE_LUIGI = 1,
 		//Monsters
 		GAMEOBJECT_TYPE_GOOMBA = 100,
 		GAMEOBJECT_TYPE_PARAGOOMBA = 101,
