@@ -1,6 +1,4 @@
 #pragma once
-
-//Hard-coding galore
 class SceneIntro : public Scene {
 private:
 	DWORD _introTimeStart;
