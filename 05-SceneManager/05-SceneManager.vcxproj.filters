@@ -252,6 +252,33 @@
     <ClCompile Include="SceneMap.cpp">
       <Filter>Source Files\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="GameIcon.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLogo.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="PropFastKoopa.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="PropKoopaShell.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="PropNormalKoopa.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="PropPlant.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="PropPlayer.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneIntro.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectText.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameUtils.h">
@@ -427,6 +454,33 @@
     </ClInclude>
     <ClInclude Include="SceneMap.h">
       <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameIcon.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogo.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="PropFastKoopa.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="PropKoopaShell.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="PropNormalKoopa.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="PropPlant.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="PropPlayer.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneIntro.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectText.h">
+      <Filter>Header Files\Intro</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

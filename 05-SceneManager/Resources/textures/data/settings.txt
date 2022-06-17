@@ -1,7 +1,7 @@
 
 
 [SETTINGS]
-default	11
+default	0
 [/]
 
 [SCENES]

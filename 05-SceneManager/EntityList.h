@@ -28,4 +28,19 @@
 #include "VenusPlant.h"
 //Other
 #include "Tail.h"
+//Map
+#include "Cactus.h"
+#include "HelpText.h"
+#include "HammerBro.h"
+//Intro
+#include "GameLogo.h"
+#include "GameIcon.h"
+#include "SelectText.h"
+#include "Curtain.h"
+#include "PropPlant.h"
+#include "BuzzyBeetle.h"
+#include "PropPlayer.h"
+#include "PropFastKoopa.h"
+#include "PropKoopaShell.h"
+#include "PropNormalKoopa.h"
 

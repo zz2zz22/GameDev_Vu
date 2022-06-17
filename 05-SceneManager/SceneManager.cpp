@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "ScenePlay.h"
 #include "SceneMap.h"
+#include "SceneIntro.h"
 
 SceneManager* SceneManager::_managerInstance = nullptr;
 
@@ -13,6 +14,8 @@ Scene* SceneManager::_CreateScene(unsigned int sceneID, std::string scenePath) {
 	Scene::SceneType sceneType = static_cast<Scene::SceneType>(sceneID);
 	//Insert scene here
 	switch (sceneType) {
+	case Scene::SceneType::SCENE_TYPE_INTRO:
+		return new SceneIntro(sceneType, scenePath);
 	case Scene::SceneType::SCENE_TYPE_MAP:
 		return new SceneMap(sceneType, scenePath);
 	default:
