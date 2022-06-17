@@ -31,12 +31,6 @@
     <Filter Include="Source Files\Item">
       <UniqueIdentifier>{1ed0c31c-97ec-4bb9-a93d-0a539687e949}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Item\Effect">
-      <UniqueIdentifier>{d1975cd0-9cb5-454b-b97b-ae5e9f7d2258}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Item\Effect">
-      <UniqueIdentifier>{97e7e496-7d2f-492b-858c-2741d918818d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -102,6 +96,21 @@
     <ClCompile Include="BonusItem.cpp">
       <Filter>Source Files\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Leaf.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Mushroom.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Orb.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Fireball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameUtils.h">
@@ -163,6 +172,21 @@
     </ClInclude>
     <ClInclude Include="BonusItem.h">
       <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Leaf.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Mushroom.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Orb.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Fireball.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
