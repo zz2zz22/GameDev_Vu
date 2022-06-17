@@ -1,7 +1,7 @@
 #pragma once
 //Throwable for both player and monster
 #include "Fireball.h"
-//Monster
+//Item
 #include "Mushroom.h"
 #include "Leaf.h"
 #include "Flower.h"
@@ -13,4 +13,10 @@
 #include "QuestionBlock.h"
 #include "ShinyBrick.h"
 #include "PBlock.h"
+//Effect
+#include "BrickDebris.h"
+#include "OrbEffect.h"
+//Monster
+#include "Goomba.h"
+#include "Paragoomba.h"
 
