@@ -61,6 +61,12 @@
     <Filter Include="Source Files\Character\State">
       <UniqueIdentifier>{1b655a2b-060d-4263-a6c8-42b4de882cbb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{09c54468-a18f-4b3e-93ba-e9a75588a02c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{f4438377-4922-4252-98d0-06a2cfd8a5c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -222,6 +228,12 @@
     <ClCompile Include="ScorePopUp.cpp">
       <Filter>Source Files\Character\State</Filter>
     </ClCompile>
+    <ClCompile Include="Cactus.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="HammerBro.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameUtils.h">
@@ -379,6 +391,12 @@
     </ClInclude>
     <ClInclude Include="ScorePopUp.h">
       <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Cactus.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="HammerBro.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

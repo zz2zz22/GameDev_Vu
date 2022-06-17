@@ -150,6 +150,7 @@
     <ClCompile Include="BonusItem.cpp" />
     <ClCompile Include="BoundBox.cpp" />
     <ClCompile Include="BrickDebris.cpp" />
+    <ClCompile Include="Cactus.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="CrouchState.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="GameUtils.cpp" />
     <ClCompile Include="Goomba.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="HammerBro.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="IdleState.cpp" />
     <ClCompile Include="JumpState.cpp" />
@@ -204,6 +206,7 @@
     <ClInclude Include="BonusItem.h" />
     <ClInclude Include="BoundBox.h" />
     <ClInclude Include="BrickDebris.h" />
+    <ClInclude Include="Cactus.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="CrouchState.h" />
@@ -218,6 +221,7 @@
     <ClInclude Include="GameUtils.h" />
     <ClInclude Include="Goomba.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="HammerBro.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="IdleState.h" />
     <ClInclude Include="JumpState.h" />
