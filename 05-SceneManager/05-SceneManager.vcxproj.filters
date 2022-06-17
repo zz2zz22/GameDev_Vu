@@ -67,6 +67,12 @@
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{f4438377-4922-4252-98d0-06a2cfd8a5c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Intro">
+      <UniqueIdentifier>{6f464eac-53a5-4d93-9554-e7821acc6933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Intro">
+      <UniqueIdentifier>{61b40df6-1f2e-42eb-8064-fdc3c54b28ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -234,6 +240,18 @@
     <ClCompile Include="HammerBro.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="HelpText.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="BuzzyBeetle.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Curtain.cpp">
+      <Filter>Source Files\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMap.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameUtils.h">
@@ -397,6 +415,18 @@
     </ClInclude>
     <ClInclude Include="HammerBro.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpText.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="BuzzyBeetle.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="Curtain.h">
+      <Filter>Header Files\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMap.h">
+      <Filter>Header Files\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

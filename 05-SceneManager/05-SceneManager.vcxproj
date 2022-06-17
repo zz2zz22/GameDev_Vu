@@ -150,10 +150,12 @@
     <ClCompile Include="BonusItem.cpp" />
     <ClCompile Include="BoundBox.cpp" />
     <ClCompile Include="BrickDebris.cpp" />
+    <ClCompile Include="BuzzyBeetle.cpp" />
     <ClCompile Include="Cactus.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="CrouchState.cpp" />
+    <ClCompile Include="Curtain.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FallState.cpp" />
@@ -165,6 +167,7 @@
     <ClCompile Include="Goomba.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="HammerBro.cpp" />
+    <ClCompile Include="HelpText.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="IdleState.cpp" />
     <ClCompile Include="JumpState.cpp" />
@@ -188,6 +191,7 @@
     <ClCompile Include="RunState.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneMap.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="ScorePopUp.cpp" />
     <ClCompile Include="ShinyBrick.cpp" />
@@ -206,10 +210,12 @@
     <ClInclude Include="BonusItem.h" />
     <ClInclude Include="BoundBox.h" />
     <ClInclude Include="BrickDebris.h" />
+    <ClInclude Include="BuzzyBeetle.h" />
     <ClInclude Include="Cactus.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="CrouchState.h" />
+    <ClInclude Include="Curtain.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityList.h" />
@@ -222,6 +228,7 @@
     <ClInclude Include="Goomba.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="HammerBro.h" />
+    <ClInclude Include="HelpText.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="IdleState.h" />
     <ClInclude Include="JumpState.h" />
@@ -244,6 +251,7 @@
     <ClInclude Include="RunState.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneMap.h" />
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="ScorePopUp.h" />
     <ClInclude Include="ShinyBrick.h" />
