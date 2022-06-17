@@ -19,4 +19,7 @@
 //Monster
 #include "Goomba.h"
 #include "Paragoomba.h"
+#include "Koopa.h"
+#include "Parakoopa.h"
+#include "PiranaPlant.h"
 
