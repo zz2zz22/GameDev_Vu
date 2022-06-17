@@ -1,5 +1,8 @@
 #include "SceneManager.h"
 #include "Entity.h"
+#include "Mushroom.h"
+#include "Leaf.h"
+#include "Flower.h"
 #include "Coin.h"
 #include "QuestionBlock.h"
 
@@ -46,7 +49,33 @@ Entity* QuestionBlock::SpawnItem(int currentHealth) {
 		item->SetPosition({ _originalPos.x, _originalPos.y - item->GetBoxHeight() });
 		dynamic_cast<Coin*>(item)->StartPopUpTimer();
 		break;
-	default:
+	case 6:
+		//Cannot think of a more elegant solution, too tired
+		if (currentHealth >= 2) {
+			//Transformation item
+			item = SceneManager::GetInstance()->GetCurrentScene()->CreateEntityFromData(
+				_extraData.at(3),
+				_extraData.at(4),
+				_extraData.at(5)
+			);
+			item->SetPosition({ _originalPos.x, _originalPos.y - item->GetBoxHeight() });
+
+			//Edge case for flower
+			if (item->GetObjectType() == GameObjectType::GAMEOBJECT_TYPE_FLOWER) {
+				item->SetPosition({ _originalPos.x, _originalPos.y - item->GetBoxHeight() / 3.0f });
+				dynamic_cast<Flower*>(item)->StartEmergeTimer();
+			}
+		}
+		else {
+			//Mushroom
+			item = SceneManager::GetInstance()->GetCurrentScene()->CreateEntityFromData(
+				_extraData.at(0),
+				_extraData.at(1),
+				_extraData.at(2)
+			);
+			item->SetPosition({ _originalPos.x, _originalPos.y - item->GetBoxHeight() / 3.0f });
+			dynamic_cast<Mushroom*>(item)->StartEmergeTimer();
+		}
 		break;
 	}
 
