@@ -1,7 +1,8 @@
 [SPRITES]
-Star	0	0	16	16	1	0
+Portal	0	0	16	16	1	0
 [/]
 
 [HITBOXES]
+-15	-4	30	8
 -8	-8	16	16
 [/]
