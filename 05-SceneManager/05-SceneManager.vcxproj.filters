@@ -55,6 +55,12 @@
     <Filter Include="Source Files\Effect">
       <UniqueIdentifier>{f16b6b55-087a-4418-8edf-f62f5f186f91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Character\State">
+      <UniqueIdentifier>{ec70781b-e1fe-4197-ab71-6959c83a4039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Character\State">
+      <UniqueIdentifier>{1b655a2b-060d-4263-a6c8-42b4de882cbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -147,6 +153,75 @@
     <ClCompile Include="PBlock.cpp">
       <Filter>Source Files\Block</Filter>
     </ClCompile>
+    <ClCompile Include="OrbEffect.cpp">
+      <Filter>Source Files\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Paragoomba.cpp">
+      <Filter>Source Files\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Koopa.cpp">
+      <Filter>Source Files\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Parakoopa.cpp">
+      <Filter>Source Files\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="PiranaPlant.cpp">
+      <Filter>Source Files\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="VenusPlant.cpp">
+      <Filter>Source Files\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Tail.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Portal.cpp">
+      <Filter>Source Files\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Trigger.cpp">
+      <Filter>Source Files\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="MaskTile.cpp">
+      <Filter>Source Files\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="MapState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="RunState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="FallState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CrouchState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="ThrowState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="WagState.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePlay.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="ScorePopUp.cpp">
+      <Filter>Source Files\Character\State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameUtils.h">
@@ -235,6 +310,75 @@
     </ClInclude>
     <ClInclude Include="PBlock.h">
       <Filter>Header Files\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbEffect.h">
+      <Filter>Header Files\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Paragoomba.h">
+      <Filter>Header Files\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Koopa.h">
+      <Filter>Header Files\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Parakoopa.h">
+      <Filter>Header Files\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="PiranaPlant.h">
+      <Filter>Header Files\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="VenusPlant.h">
+      <Filter>Header Files\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Tail.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal.h">
+      <Filter>Header Files\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger.h">
+      <Filter>Header Files\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="MaskTile.h">
+      <Filter>Header Files\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="MapState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="RunState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="FallState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CrouchState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="ThrowState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="WagState.h">
+      <Filter>Header Files\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePlay.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="ScorePopUp.h">
+      <Filter>Header Files\Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

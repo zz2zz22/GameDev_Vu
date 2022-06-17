@@ -1,7 +1,7 @@
 #include "GameUtils.h"
 #include "Game.h"
 #include "Scene.h"
-//#include "../EntityList.h"
+#include "EntityList.h"
 
 bool Scene::_IsEntityInViewport(Entity* entity, RECTF viewport) const {
 	//Ignore the player and tail, door and ceiling
@@ -195,9 +195,202 @@ void Scene::_ParseTextures(std::string line) {
 	_textureMap.insert(std::make_pair(textureID, texture));
 }
 
+void Scene::_ParseEntityData(std::string line) {
+	std::vector<std::string> tokens = GameUtils::SplitStr(line);
+
+	if (tokens.size() < 5) {
+		return;
+	}
+
+	std::vector<std::string> extraData;
+	if (tokens.size() > 5) {
+		for (unsigned int i = 5; i < tokens.size(); ++i) {
+			extraData.emplace_back(tokens.at(i));
+		}
+	}
+
+	GameObject::GameObjectType objectType = static_cast<GameObject::GameObjectType>(std::stoul(tokens.at(0)));
+
+	float x = std::stof(tokens.at(3));
+	float y = std::stof(tokens.at(4));
+	D3DXVECTOR2 position = D3DXVECTOR2(x, y);
+
+	unsigned int textureID = std::stoul(tokens.at(2));
+	Texture* texture = GetTexture(textureID);
+
+	Entity* entity = nullptr;
+	switch (objectType) {
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_MARIO:
+		_player = new Player;
+		_player->SetOjectType(objectType);
+		_player->ParseData(tokens.at(1), texture, extraData);
+		_player->SetPosition(position);
+
+		_entities.emplace_back(_player);
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_LUIGI:
+		//Stub
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_GOOMBA:
+		entity = new Goomba;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PARAGOOMBA:
+		entity = new Paragoomba;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_KOOPA:
+		entity = new Koopa;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PARAKOOPA:
+		entity = new Parakoopa;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PIRANHAPLANT:
+		entity = new PiranaPlant;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_VENUSPLANT:
+		entity = new VenusPlant;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_TAIL:
+		entity = new Tail;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PORTAL:
+		entity = new Portal;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_MOVINGPLATFORM:
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_REDMUSHROOM:
+		entity = new Mushroom;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_LEAF:
+		entity = new Leaf;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_STAR:
+		entity = new Star;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_COIN:
+		entity = new Coin;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_BONUSITEM:
+		entity = new BonusItem;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_ORB:
+		entity = new Orb;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_QUESTIONBLOCK:
+		entity = new QuestionBlock;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_SHINYBRICK:
+		entity = new ShinyBrick;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PBLOCK:
+		entity = new PBlock;
+		break;
+	
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_TRIGGER:
+		entity = new Trigger;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_MASKTILE:
+		entity = new MaskTile;
+		break;
+
+	}
+
+	if (entity != nullptr) {
+		entity->SetOjectType(objectType);
+		entity->ParseData(tokens.at(1), texture, extraData);
+		entity->SetPosition(position);
+
+		_entities.emplace_back(entity);
+	}
+}
+
+void Scene::_ParseTileData(std::string line) {
+	std::vector<std::string> tokens = GameUtils::SplitStr(line);
+
+	if (tokens.size() < 5) {
+		return;
+	}
+
+	GameObject::GameObjectType objectType = static_cast<GameObject::GameObjectType>(std::stoul(tokens.at(0)));
+
+	float x = std::stof(tokens.at(1));
+	float y = std::stof(tokens.at(2));
+	D3DXVECTOR2 position = D3DXVECTOR2(x, y);
+
+	RECTF hitbox;
+	hitbox.left = -8.0f;
+	hitbox.top = -8.0f;
+	hitbox.right = std::stof(tokens.at(3));
+	hitbox.bottom = std::stof(tokens.at(4));
+
+	Tile* tile = new Tile;
+	tile->SetOjectType(objectType);
+	tile->SetPosition(position);
+	tile->AddHitbox(hitbox);
+
+	_tiles.emplace_back(tile);
+}
+
 void Scene::_ParseGrid(std::string line) {
 	_grid = new Grid;
 	_grid->ParseData(line, _entities);
+}
+
+void Scene::_ParseMainEffect(std::string line) {
+	std::vector<std::string> tokens = GameUtils::SplitStr(line);
+
+	if (tokens.size() < 3) {
+		return;
+	}
+
+	GameObject::GameObjectType objectType = static_cast<GameObject::GameObjectType>(std::stoul(tokens.at(0)));
+	unsigned int textureID = std::stoul(tokens.at(2));
+	Texture* texture = GetTexture(textureID);
+
+	_scorePopUp = new ScorePopUp(_player);
+	_scorePopUp->SetOjectType(objectType);
+	_scorePopUp->ParseData(tokens.at(1), texture);
+}
+
+void Scene::_ParseHUD(std::string line) {
+	std::vector<std::string> tokens = GameUtils::SplitStr(line);
+
+	if (tokens.size() < 2) {
+		return;
+	}
+
+	unsigned int textureID = std::stoul(tokens.at(1));
+	Texture* texture = GetTexture(textureID);
+
+	_hud = new HUD(_player);
+	_hud->ParseData(tokens.at(0), texture);
+}
+
+void Scene::_ParseBackground(std::string line) {
+	std::vector<std::string> tokens = GameUtils::SplitStr(line);
+
+	if (tokens.size() == 1) {
+		unsigned int textureID = std::stoul(tokens.at(0));
+		Texture* texture = GetTexture(textureID);
+
+		_background = new Background(texture);
+		return;
+	}
+
+	if (tokens.size() < 6) {
+		return;
+	}
+
+	RECT spriteBound;
+	spriteBound.left = std::stoul(tokens.at(0));
+	spriteBound.top = std::stoul(tokens.at(1));
+	spriteBound.right = std::stoul(tokens.at(2));
+	spriteBound.bottom = std::stoul(tokens.at(3));
+
+	float x = std::stof(tokens.at(4));
+	float y = std::stof(tokens.at(5));
+	D3DXVECTOR2 position = D3DXVECTOR2(x, y);
+
+	_background->AddSprite(spriteBound, position);
 }
 
 Scene::Scene(SceneType sceneID, std::string path) {
@@ -263,7 +456,53 @@ void Scene::RemoveEntityFromScene(Entity* entity) {
 	_entities.erase(std::remove(_entities.begin(), _entities.end(), entity), _entities.end());
 }
 
+Entity* Scene::CreateEntityFromData(std::string objectID, std::string dataPath, std::string textureID) {
+	Entity* entity = nullptr;
 
+	GameObject::GameObjectType objectType = static_cast<GameObject::GameObjectType>(std::stoul(objectID));
+	unsigned int texID = std::stoul(textureID);
+	Texture* texture = GetTexture(texID);
+
+	switch (objectType) {
+		//Projectiles
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PLAYERFIREBALL:
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_VENUSFIREBALL:
+		entity = new Fireball;
+		break;
+		//Items
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_REDMUSHROOM:
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_GREENMUSHROOM:
+		entity = new Mushroom;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_LEAF:
+		entity = new Leaf;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_FLOWER:
+		entity = new Flower;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_COIN:
+		entity = new Coin;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_ORB:
+		entity = new Orb;
+		break;
+		//Animated blocks
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PBLOCK:
+		entity = new PBlock;
+		break;
+		//Effects
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_BRICKEFFECT:
+		entity = new BrickDebris;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_ORBEFFECT:
+		entity = new OrbEffect;
+		break;
+	}
+
+	entity->SetOjectType(objectType);
+	entity->ParseData(dataPath, texture);
+	return entity;
+}
 
 void Scene::LoadScene() {
 	char debug[100];
@@ -283,9 +522,19 @@ void Scene::LoadScene() {
 	_entities.reserve(MAX_ENTITIES_PER_SCENE);
 	_tiles.reserve(MAX_ENTITIES_PER_SCENE);
 
+	_player = nullptr;
 
+	_propMario = nullptr;
+	_propLuigi = nullptr;
+
+	_selectText = nullptr;
+
+	_scorePopUp = nullptr;
+	_hud = nullptr;
+	_background = nullptr;
+	_grid = nullptr;
 	_cameraInstance = Camera::GetInstance();
-	
+	//
 
 	_SceneFileSection sceneFileSection = _SceneFileSection::SCENEFILE_SECTION_UNKNOWN;
 
@@ -389,9 +638,23 @@ void Scene::LoadScene() {
 		case _SceneFileSection::SCENEFILE_SECTION_TEXTURES:
 			_ParseTextures(line);
 			break;
-		
+		case _SceneFileSection::SCENEFILE_SECTION_ENTITYDATA:
+			_ParseEntityData(line);
+			break;
+		case _SceneFileSection::SCENEFILE_SECTION_TILEDATA:
+			_ParseTileData(line);
+			break;
 		case _SceneFileSection::SCENEFILE_SECTION_GRID:
 			_ParseGrid(line);
+			break;
+		case _SceneFileSection::SCENEFILE_SECTION_HUD:
+			_ParseHUD(line);
+			break;
+		case _SceneFileSection::SCENEFILE_SECTION_MAINEFFECT:
+			_ParseMainEffect(line);
+			break;
+		case _SceneFileSection::SCENEFILE_SECTION_BACKGROUND:
+			_ParseBackground(line);
 			break;
 		}
 	}
