@@ -13,6 +13,9 @@
 #include "QuestionBlock.h"
 #include "ShinyBrick.h"
 #include "PBlock.h"
+#include "Portal.h"
+#include "Trigger.h"
+#include "MaskTile.h"
 //Effect
 #include "BrickDebris.h"
 #include "OrbEffect.h"
@@ -22,4 +25,6 @@
 #include "Koopa.h"
 #include "Parakoopa.h"
 #include "PiranaPlant.h"
+//Other
+#include "Tail.h"
 
