@@ -158,7 +158,12 @@
 105	Resources\textures\data\monster\venusplant_red.txt	4	360	383	108	Resources\textures\data\fireball.txt	7
 105	Resources\textures\data\monster\venusplant_green.txt	4	1864	390	108	Resources\textures\data\fireball.txt	7
 
+#Tail
+197	Resources\textures\data\tail.txt	2	0	0
 
+#Portal								#destination
+198	Resources\textures\data\monster\portal.txt	0	2264	108	2104	468
+198	Resources\textures\data\monster\portal.txt	0	2328	485	2328	396
 [/]
 
 #objID	x	y	width	height
