@@ -23,7 +23,7 @@ void FallState::Render() {
 		return;
 	}
 
-	const float RAC_OFFSET = 4.0f;
+	const float RAC_OFFSET = 2.0f;
 	switch (_form) {
 	case _Form::SMALL:
 		if (_player->IsInPipe()) {
