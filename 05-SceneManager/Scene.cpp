@@ -284,14 +284,69 @@ void Scene::_ParseEntityData(std::string line) {
 	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PBLOCK:
 		entity = new PBlock;
 		break;
-	
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_CACTUS:
+		entity = new Cactus;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_HELPTEXT:
+		entity = new HelpText;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_HAMMERBRO:
+		entity = new HammerBro;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_LOGO:
+		entity = new GameLogo;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_ICON:
+		entity = new GameIcon;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_SELECT:
+		_selectText = new SelectText;
+		_selectText->SetOjectType(objectType);
+		_selectText->ParseData(tokens.at(1), texture, extraData);
+		_selectText->SetPosition(position);
+
+		_entities.emplace_back(_selectText);
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_CURTAIN:
+		entity = new Curtain;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PROPPLANT:
+		entity = new PropPlant;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_BUZZYBEETLE:
+		entity = new BuzzyBeetle;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PROPMARIO:
+		_propMario = new PropPlayer;
+		_propMario->SetOjectType(objectType);
+		_propMario->ParseData(tokens.at(1), texture, extraData);
+		_propMario->SetPosition(position);
+
+		_entities.emplace_back(_propMario);
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PROPLUIGI:
+		_propLuigi = new PropPlayer;
+		_propLuigi->SetOjectType(objectType);
+		_propLuigi->ParseData(tokens.at(1), texture, extraData);
+		_propLuigi->SetPosition(position);
+
+		_entities.emplace_back(_propLuigi);
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PROPFASTKOOPA:
+		entity = new PropFastKoopa;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PROPKOOPASHELL:
+		entity = new PropKoopaShell;
+		break;
+	case GameObject::GameObjectType::GAMEOBJECT_TYPE_PROPNORMALKOOPA:
+		entity = new PropNormalKoopa;
+		break;
 	case GameObject::GameObjectType::GAMEOBJECT_TYPE_TRIGGER:
 		entity = new Trigger;
 		break;
 	case GameObject::GameObjectType::GAMEOBJECT_TYPE_MASKTILE:
 		entity = new MaskTile;
 		break;
-
 	}
 
 	if (entity != nullptr) {

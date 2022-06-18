@@ -43,4 +43,3 @@
 #include "PropFastKoopa.h"
 #include "PropKoopaShell.h"
 #include "PropNormalKoopa.h"
-
